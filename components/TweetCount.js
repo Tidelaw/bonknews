@@ -4,7 +4,7 @@ import moment from 'moment'
 import MUITooltip from '@mui/material/Tooltip';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-const TweetCountTooltip = ({ active, payload, label }) => {
+const TweetCountTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
             <div className="w-max font-sans h-max flex-col rounded-lg shadow-md bg-white outline-0 p-2">

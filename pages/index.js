@@ -9,7 +9,6 @@ import KeyWords from '../components/KeyWords';
 import axios from 'axios';
 
 export default function Home({rawTweet, tweetCount, cumulativeData}) {
-  let [tweetLimit, setTweetLimit] = useState(10);
   let [keywords, setKeywords] = useState()
 
   useEffect(() => {
