@@ -41,9 +41,9 @@ function plotOnClick(e) {
     window.open("https://twitter.com/x/status/" + e.id, "_blank")
 }
 
-export default function TweetScatterChart({ tweets, limit }) {
+export default function TweetScatterChart({ tweets }) {
     var ScatterData;
-    tweets ? ScatterData = tweets.filter(e => e.public_metrics.like_count > limit) : [];
+    tweets ? ScatterData = tweets : [];
     return (
         tweets ?
             <div className='flex self-start w-full col-span-2 rounded-lg shadow shadow-none bg-neutral-900 flex-col p-4 gap-y-4 items-center xl:items-start'>

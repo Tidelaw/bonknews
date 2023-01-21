@@ -30,7 +30,7 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
   return (
     <div className="flex container min-w-full h-[90rem] bg-neutral-800 justify-center items-center flex-col font-sans">
       <main className="flex h-full grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-8">
-        <TweetScatterChart limit={tweetLimit} tweets={filteredLikes}></TweetScatterChart>
+        <TweetScatterChart tweets={filteredLikes}></TweetScatterChart>
         <CumulativeChart data={cumulativeData}></CumulativeChart>
         <TweetCountChart volume={tweetCount}></TweetCountChart>
         <KeyWords keywords={keywords}></KeyWords>
