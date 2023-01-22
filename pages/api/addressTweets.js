@@ -24,6 +24,7 @@ export default async function handler(req, res) {
             queryResult = await axios(config);
             userTweets = userTweets.concat(queryResult.data.data)
             console.log(userTweets.length)
+            if (userTweets.length>1500){pagination = false} // vercel limit
             }
 
         else {pagination = false;}
