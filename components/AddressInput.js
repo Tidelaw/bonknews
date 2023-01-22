@@ -32,7 +32,7 @@ export default function AddressInput() {
   return ( //grid grid-cols-2 grid-rows-2 
     <div className='w-screen 
     
-    h-full flex-col justify-center items-center p-16 space-y-8'>
+    h-screen flex-col justify-center items-center p-16 space-y-8'>
 
       <form onSubmit={handleSubmit} className="flex row-start-1 col-span-2 p-2 space-x-4 items-center justify-center">
         <input
@@ -48,10 +48,10 @@ export default function AddressInput() {
         </MUITooltip>
       </form>
 
-      <div className='flex w-full h-2/5 justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivScatterChart tweets={addressTweets}></IndivScatterChart>
       </div>
-      <div className='flex w-full h-2/5 justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivCumulativeChart data={cumuData}></IndivCumulativeChart>
       </div>
 

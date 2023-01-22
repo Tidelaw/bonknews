@@ -33,13 +33,15 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
   return (
     <div className="flex container flex-col min-w-full bg-neutral-800 justify-center font-sans">
         
-      <div className='flex w-full h-screen justify-center'>
+      <div className='flex w-full h-[62rem] justify-center'>
         <AddressInput></AddressInput>
       </div>
       
-      <div className="flex h-[85rem] grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-14">
+      <div className="flex h-[85rem] grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-8">
         
-        <div className='flex self-start w-full col-span-2 rounded-lg shadow shadow-none bg-neutral-900 flex-col p-4 gap-y-4 items-center xl:items-start'>
+
+
+        <div className='flex self-start w-full col-span-2 rounded-lg shadow shadow-none bg-neutral-900 flex-col p-4 items-center xl:items-start'>
         <TweetScatterChart tweets={filteredLikes}></TweetScatterChart>
         </div>
 
