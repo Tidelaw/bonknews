@@ -22,7 +22,7 @@ const collectionTweets = async (req, res) => {
                 queryResult = await axios(config);
                 allTweets = allTweets.concat(queryResult.data.data)
 
-                console.log(allTweets.length, queryResult.data.meta.next_token)
+                // console.log(allTweets.length, queryResult.data.meta.next_token)
             }
             else {pagination = false;}
         }
@@ -39,7 +39,8 @@ const collectionTweets = async (req, res) => {
         const { data, error } = await supabase
         .from('baseTweets')
         .upsert(filtered)
-        console.log(data, error)}
+        // console.log(data, error)
+    }
         
         catch {
             let filtered = [];
@@ -53,7 +54,7 @@ const collectionTweets = async (req, res) => {
             const { data, error } = await supabase
             .from('baseTweets')
             .upsert(filtered)
-            console.log(data, error)
+            // console.log(data, error)
         }
 
     console.log("All collections logged.")

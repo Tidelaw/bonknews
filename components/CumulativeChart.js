@@ -25,7 +25,6 @@ const TweetCountTooltip = ({ active, payload }) => {
 };
 
 export default function CumulativeChart({ data }) {
-    console.log(data)
     return (
         data ?
         <div className='flex w-full col-span-2 row-start-2 rounded-lg shadow shadow-none bg-neutral-900 flex-col p-4 gap-y-4 items-center'>

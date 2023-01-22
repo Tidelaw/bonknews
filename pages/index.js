@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import TweetScatterChart from '../components/TweetScatter';
 import TweetCountChart from '../components/TweetCount';
 import CumulativeChart from '../components/CumulativeChart';
+import AddressInput from '../components/AddressInput';
 import KeywordTreemap from '../components/KeywordTreemap';
 import KeyWords from '../components/KeyWords';
 import axios from 'axios';
@@ -24,18 +25,24 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
     if (rawTweet[i].public_metrics.like_count>29){
       filteredLikes.push(rawTweet[i])
     }
-
   }
 
+  
+
   return (
-    <div className="flex container min-w-full h-[90rem] bg-neutral-800 justify-center items-center flex-col font-sans">
-      <main className="flex h-full grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-8">
+    <div className="flex container flex-col min-w-full bg-neutral-800 justify-center font-sans">
+        
+      <div className='flex w-full h-screen justify-center'>
+        <AddressInput></AddressInput>
+      </div>
+      
+      <div className="flex h-[85rem] grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-14">
         <TweetScatterChart tweets={filteredLikes}></TweetScatterChart>
         <CumulativeChart data={cumulativeData}></CumulativeChart>
         <TweetCountChart volume={tweetCount}></TweetCountChart>
         <KeyWords keywords={keywords}></KeyWords>
         {/* <KeywordTreemap keywords={keywords}></KeywordTreemap> */}
-      </main>
+      </div>
     </div>
   )
 }
@@ -65,7 +72,7 @@ export async function getStaticProps() {
             }
             if (cumulativeStats[hour-2]){
               cumulativeStats[hour-1].indivlikes = cumulativeStats[hour-1].likes-cumulativeStats[hour-2].likes}
-        }}
+    }}
 
   return {
     props: {
