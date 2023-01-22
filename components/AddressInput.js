@@ -48,10 +48,10 @@ export default function AddressInput() {
         </MUITooltip>
       </form>
 
-      <div className='flex w-full h-[400px] justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex w-full h-2/5 justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivScatterChart tweets={addressTweets}></IndivScatterChart>
       </div>
-      <div className='flex w-full h-[400px] justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex w-full h-2/5 justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivCumulativeChart data={cumuData}></IndivCumulativeChart>
       </div>
 
