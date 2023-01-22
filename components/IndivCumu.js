@@ -24,7 +24,8 @@ const TweetCountTooltip = ({ active, payload }) => {
     return null;
 };
 
-export default function CumulativeChart({data}) {
+export default function IndivCumulativeChart({data}) {
+    console.log(data)
     return (
         data ?
         <div className='w-full h-full'>
@@ -39,9 +40,7 @@ export default function CumulativeChart({data}) {
                 </div>
 
                 <ResponsiveContainer width="100%" height={300} className='flex bg-neutral-900'>
-                    <ComposedChart
-                        data={data}
-                    >
+                    <ComposedChart data={data}>
                         <XAxis dataKey="hour" title="hour" style={{
                             fontSize: '1rem',
                             fontFamily: 'sans-serif',
@@ -50,7 +49,7 @@ export default function CumulativeChart({data}) {
                             axisLine={false}
                             tickFormatter={(unixTime) => moment(unixTime).format('HH:mm Do')}
                             tickLine={false}
-                            tickCount={5}
+                            tickCount={20}
                             interval={9}
                             domain={['dataMin', 'dataMax']}
                         ></XAxis>

@@ -41,9 +41,9 @@ function plotOnClick(e) {
     window.open("https://twitter.com/x/status/" + e.id, "_blank")
 }
 
-export default function TweetScatterChart({ tweets }) {
+export default function IndivScatterChart({ tweets }) {
     var ScatterData;
-    tweets ? ScatterData = tweets : [];
+    tweets ? ScatterData = tweets.reverse() : [];
     return (
         tweets ?
             <div className='w-full h-full'>
@@ -70,7 +70,6 @@ export default function TweetScatterChart({ tweets }) {
                             axisLine={false}
                             tickFormatter={(unixTime) => moment(unixTime).format('HH:mm Do')}
                             tickLine={false}
-                            type="number"
                             tickCount={24}
                             domain={['dataMin', 'dataMax']}
                         ></XAxis>

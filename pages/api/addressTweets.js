@@ -1,10 +1,9 @@
 const axios = require('axios');
 
 export default async function handler(req, res) {
-    console.log('receive')
+    try {
     if (req.method === "POST"){
-        console.log(req.body)
-        // console.log(req, 'wec', req.username, 'wef')
+
         const config = {
             method: 'get',
             url: `https://api.twitter.com/2/users/by/username/${req.body.username}`,
@@ -36,16 +35,16 @@ export default async function handler(req, res) {
             if (userTweets[i].text){
                 let tweetTextRaw = userTweets[i].text.split(" ")
                 let tweetText = tweetTextRaw.map(tweet => tweet.toLowerCase())
-                // console.log(tweetText.length)
                 tweetText.forEach((currentWord) => {
-                    // console.log(currentWord)
                     if (currentWord.includes("bonk")){
-                        // console.log(currentWord)
                         bonkTweets.push(userTweets[i])
                     }
                 })
             }
+            userTweets[i].created_at = Date.parse(userTweets[i].created_at)
         }
-    }
-    res.end(JSON.stringify(bonkTweets))
+        res.end(JSON.stringify(bonkTweets))
+    }}
+
+    catch (err) {console.log(err, 'api error')}
 }
