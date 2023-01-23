@@ -23,6 +23,7 @@ export default async function handler(req, res) {
             config.url = `https://api.twitter.com/2/users/${twitterID}/tweets?max_results=100&tweet.fields=created_at,public_metrics&pagination_token=`+queryResult.data.meta.next_token;
             queryResult = await axios(config);
             userTweets = userTweets.concat(queryResult.data.data)
+            console.log(userTweets.length)
             if (userTweets.length>1500){pagination = false} // vercel limit
             }
 
