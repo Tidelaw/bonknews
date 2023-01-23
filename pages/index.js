@@ -9,6 +9,7 @@ import KeywordTreemap from '../components/KeywordTreemap';
 import KeyWords from '../components/KeyWords';
 import axios from 'axios';
 import {cumulativeChartFormat} from '../utils/cumuFormat';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home({rawTweet, tweetCount, cumulativeData}) {
   let [keywords, setKeywords] = useState()
@@ -32,7 +33,7 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
 
   return (
     <div className="flex container flex-col min-w-full bg-neutral-800 justify-center font-sans">
-        
+      <Analytics></Analytics>
       <div className='flex justify-center font-bold text-4xl text-white mt-4 text-6xl text-orange'>Individual</div>
       <div className='flex w-full h-[62rem] justify-center'>
         <AddressInput></AddressInput>

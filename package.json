@@ -15,6 +15,7 @@
     "@mui/material": "^5.11.5",
     "@next/font": "13.1.2",
     "@supabase/supabase-js": "^2.4.0",
+    "@vercel/analytics": "^0.1.8",
     "axios": "^1.2.3",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
