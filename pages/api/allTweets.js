@@ -39,7 +39,6 @@ const collectionTweets = async (req, res) => {
         const { data, error } = await supabase
         .from('baseTweets')
         .upsert(filtered)
-        // console.log(data, error)
     }
         
         catch {

@@ -1,8 +1,6 @@
 export function cumulativeChartFormat (data) {
     let cumulativeStats = []
-    console.log(data, 'ex1')
     if (data[0]){
-        console.log(data[0], 'ex2')
         data.reverse()        
         let endHour = Math.ceil((data[data.length-1].created_at-data[0].created_at)/3600000)
         for (let hour = 1; hour<endHour; hour++){
@@ -21,9 +19,7 @@ export function cumulativeChartFormat (data) {
             }
             if (cumulativeStats[hour-2]){
               cumulativeStats[hour-1].indivlikes = cumulativeStats[hour-1].likes-cumulativeStats[hour-2].likes}
-              console.log(cumulativeStats, '2fin')
         }
     }
-    console.log(cumulativeStats, 'final')
     return {cumulativeStats}
 }

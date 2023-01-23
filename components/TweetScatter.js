@@ -46,7 +46,7 @@ export default function TweetScatterChart({ tweets }) {
     tweets ? ScatterData = tweets : [];
     return (
         tweets ?
-            <div className='w-full h-full'>
+            <div className='w-full h-full space-y-4'>
 
                 <div className='flex w-full justify-between flex-row items-center'>
                     <h2 className="text-gray-200 font-sans font-medium text-xl w-max">
@@ -56,7 +56,7 @@ export default function TweetScatterChart({ tweets }) {
                     </MUITooltip>
                 </div>
 
-                <ResponsiveContainer width="100%" height={300} className='flex bg-neutral-900'>
+                <ResponsiveContainer width="100%" height={325} className='flex bg-neutral-900'>
                     <ScatterChart
                         data={ScatterData}
                         width={400}

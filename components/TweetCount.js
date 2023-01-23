@@ -22,7 +22,7 @@ const TweetCountTooltip = ({ active, payload }) => {
 export default function TweetCountChart({ volume }) {
     return (
         volume ?
-            <div className='flex self-end w-full col-span-2 row-start-3 rounded-lg shadow-none bg-neutral-900 flex-col p-4 gap-y-4 items-center'>
+            <div className='w-full h-full space-y-4'>
 
                 <div className='flex w-full justify-between flex-row items-center'>
                     <h2 className="text-gray-200 font-sans font-medium text-xl w-max">
@@ -33,11 +33,10 @@ export default function TweetCountChart({ volume }) {
                     </MUITooltip>
                 </div>
 
-                <ResponsiveContainer width="100%" height={300} className='flex bg-neutral-900'>
+                <ResponsiveContainer width="100%" height={325} className='flex bg-neutral-900'>
                     <LineChart
                         data={volume}
-                        width={400}
-                        height={400}
+
                     >
                         <XAxis dataKey="start" title="Time" style={{
                             fontSize: '1rem',

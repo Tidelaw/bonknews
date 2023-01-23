@@ -33,14 +33,13 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
   return (
     <div className="flex container flex-col min-w-full bg-neutral-800 justify-center font-sans">
         
+      <div className='flex justify-center font-bold text-4xl text-white mt-4 text-6xl text-orange'>Individual</div>
       <div className='flex w-full h-[62rem] justify-center'>
         <AddressInput></AddressInput>
       </div>
       
+      <h1 className='flex justify-center font-bold text-6xl text-orange'>All</h1>
       <div className="flex h-[85rem] grid grid-cols-3 grid-rows-3 w-full text-2xl justify-center items-center p-16 gap-8">
-        
-
-
         <div className='flex self-start w-full col-span-2 rounded-lg shadow shadow-none bg-neutral-900 flex-col p-4 items-center xl:items-start'>
         <TweetScatterChart tweets={filteredLikes}></TweetScatterChart>
         </div>
@@ -49,7 +48,10 @@ export default function Home({rawTweet, tweetCount, cumulativeData}) {
           <CumulativeChart data={cumulativeData}></CumulativeChart>
         </div>
 
-        <TweetCountChart volume={tweetCount}></TweetCountChart>
+        <div className='flex self-end w-full col-span-2 row-start-3 rounded-lg shadow-none bg-neutral-900 flex-col p-4 gap-y-4 items-center'>
+          <TweetCountChart volume={tweetCount}></TweetCountChart>
+        </div>
+
         <KeyWords keywords={keywords}></KeyWords>
         {/* <KeywordTreemap keywords={keywords}></KeywordTreemap> */}
       </div>
