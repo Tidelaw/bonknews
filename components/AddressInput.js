@@ -16,9 +16,16 @@ export default function AddressInput() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await axios.post("/api/addressTweets", {
-      username: address
-    });
+    if (event) {
+    
+    }
+    
+    setAddressTweets([])
+    setCumuData([])
+
+    ///^[a-zA-Z0-9_]{1,15}$/
+    
+    const response = await axios.post("/api/addressTweets", {username: address});
 
     try {
       setAddressTweets(response.data)
@@ -32,7 +39,7 @@ export default function AddressInput() {
   return ( //grid grid-cols-2 grid-rows-2 
     <div className='w-screen 
     
-    h-screen flex-col justify-center items-center p-16 space-y-8'>
+    h-screen flex-col justify-center items-center p-16 pt-8 space-y-4'>
 
       <form onSubmit={handleSubmit} className="flex row-start-1 col-span-2 p-2 space-x-4 items-center justify-center">
         <input
@@ -41,17 +48,17 @@ export default function AddressInput() {
           className="rounded-lg h-12 outline-0 p-4 bg-neutral-900 text-white"
           onChange={(e) => setAddress(e.target.value)}
         />
-        <input className='p-2 rounded-lg bg-orange cursor-pointer' type="submit" />
+        <input className='p-2 rounded-lg bg-orange font-semibold text-neutral-800 duration-200 hover:bg-light-orange cursor-pointer' type="submit" />
         <MUITooltip placement='top'
           title={"Input twitter username without @, e.g. @username --> username "}>
           <InfoOutlinedIcon htmlColor="white"></InfoOutlinedIcon>
         </MUITooltip>
       </form>
 
-      <div className='flex w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex  w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivScatterChart tweets={addressTweets}></IndivScatterChart>
       </div>
-      <div className='flex w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
+      <div className='flex  w-full h-min justify-center items-center shadow shadow-none p-4 gap-y-4 bg-neutral-900 rounded-lg'>
         <IndivCumulativeChart data={cumuData}></IndivCumulativeChart>
       </div>
 
