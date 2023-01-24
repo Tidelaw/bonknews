@@ -17,7 +17,7 @@ export default function KeyWords ({keywords}){
     return (
         keywords
          ? (
-        <div className="flex col-start-3 row-span-3 h-full flex-nowrap flex-col items-center justify-center inline-flex overflow-scroll rounded-lg space-y-2">
+        <div className="flex col-start-3 row-span-3 xl:h-full h-[52rem] flex-nowrap flex-col items-center justify-center inline-flex overflow-scroll rounded-lg space-y-2">
             <div className="flex items-center text-2xl justify-between font-sans text-gray-200 font-medium bg-neutral-900 w-full text-center p-4 rounded-lg">
                 Top 100 Keywords
                 <MUITooltip placement='top' title={
